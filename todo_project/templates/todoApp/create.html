@@ -1,0 +1,61 @@
+<html>
+{% extends 'todoApp/base.html' %}
+{% block content %}
+<style>
+	#text{
+		color: whitesmoke;
+	}
+	form{
+		background-color: #FF8C00;
+		border-style: groove;
+		top: 50%;
+		width: 40%;
+  		height: 70%;
+		border: 2px  whitesmoke;
+  		border-radius: 15px 50px;
+	}
+	input[type=text] {
+  		width: 90%;
+  		padding: 12px 20px;
+  		margin: 8px 0;
+  		box-sizing: border-box;
+  		border-radius: 10px;
+	}
+
+	.button {
+  		background-color: #4CAF50; /* Green */
+  		color: white;
+  		border: 2px whitesmoke;
+  		padding: 16px 32px;
+  		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+  		font-size: 16px;
+  		margin: 4px 2px;
+  		transition-duration: 0.4s;
+  		cursor: pointer;
+  		border-radius: 20px;
+  		margin-top: 20px;
+	}
+
+
+	.button:hover {
+  		background-color: whitesmoke; /* Green */
+  		color: #4CAF50;
+	}
+</style>
+<body>
+	<div align="center">
+		<h1 id="text">Add New Task</h1>
+		<form method="POST" id="text">
+			<p>--->Due format (yyyy-mm-dd)<---</p>
+			{{ form.as_p }}
+		{%csrf_token%}
+		<input class="button" type="submit" value="Save">
+		</form>
+		<br>
+		<a href="/check/"><input class="button" type="submit" value="Home"></a>
+	</div>
+</body>
+{% endblock %}
+</html>
